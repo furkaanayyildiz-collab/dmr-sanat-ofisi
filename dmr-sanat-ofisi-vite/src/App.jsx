@@ -267,7 +267,7 @@ export default function DMRSanatOfisi() {
   const [showStudioPage, setShowStudioPage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 4300);
+    const timer = setTimeout(() => setShowIntro(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 

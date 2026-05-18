@@ -502,15 +502,7 @@ export default function DMRSanatOfisi() {
         </div>
       )}
 
-      <section id="hero" className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0">
-  <DayNightReveal />
-</div>
-
-<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-black/60 z-[2]" />
-<div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-black/35 z-[2]" />
-        </div>
-      </section>
+     <DayNightReveal />
 
       <section id="philosophy" className="relative mx-auto max-w-7xl px-5 py-28 md:px-10 md:py-44">
         <div className="grid gap-16 md:grid-cols-[0.62fr_1.38fr] md:items-end">

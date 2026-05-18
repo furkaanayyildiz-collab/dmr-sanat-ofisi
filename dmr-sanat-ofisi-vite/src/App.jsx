@@ -300,49 +300,22 @@ export default function DMRSanatOfisi() {
         </div>
       </a>
 {showIntro && (
-  <motion.div
-    className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#020202]"
-    initial={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-  >
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(216,177,111,.12),transparent_34%)]" />
-
-    {introCards.map((card, index) => (
-      <motion.div
-        key={index}
-        initial={{
-          opacity: 0,
-          scale: 0.35,
-          rotate: card.rotate * 2,
-          filter: "blur(18px)",
-        }}
-        animate={{
-          opacity: [0, 0.65, 0.42],
-          scale: [0.35, 1.08, 1],
-          rotate: card.rotate,
-          filter: "blur(0px)",
-        }}
-        transition={{
-          duration: 1.25,
-          delay: card.delay,
-          ease: "easeOut",
-        }}
-        className="absolute hidden overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_28px_90px_rgba(0,0,0,.55)] md:block"
-        style={{
-          left: card.x,
-          top: card.y,
-          width: card.w,
-          aspectRatio: "4 / 5",
-        }}
-      >
-        <img
-          src={introImages[index]}
-          alt="DMR intro render"
-          className="h-full w-full object-cover opacity-80 saturate-[0.8] contrast-[1.08]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-white/5" />
-      </motion.div>
-    ))}
+  <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020202]">
+    <motion.div
+      initial={{ opacity: 0, y: 18, scale: 0.94 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="relative text-center"
+    >
+      <div className="absolute -inset-20 rounded-full bg-[#D8B16F]/10 blur-[90px]" />
+      <DMRLogo className="relative mx-auto w-40 text-[#F7F1E8] drop-shadow-[0_0_50px_rgba(216,177,111,0.18)] md:w-64" />
+      <div className="relative mx-auto mt-7 h-px w-36 bg-gradient-to-r from-transparent via-[#D8B16F]/80 to-transparent" />
+      <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">
+        Sanat Ofisi
+      </p>
+    </motion.div>
+  </motion.div>
+)}
 
     <motion.div
       initial={{ opacity: 0, y: 18, scale: 0.94 }}

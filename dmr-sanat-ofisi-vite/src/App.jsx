@@ -193,8 +193,8 @@ const services = [
 function DayNightReveal() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const nightOpacity = useTransform(scrollYProgress, [0.2, 0.62], [0, 1]);
-  const dayOpacity = useTransform(scrollYProgress, [0.55, 0.88], [1, 0.18]);
+ const nightOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+const dayOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const sceneScale = useTransform(scrollYProgress, [0, 1], [1.02, 1.09]);
   const nightScale = useTransform(scrollYProgress, [0, 1], [1.015, 1.085]);
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);

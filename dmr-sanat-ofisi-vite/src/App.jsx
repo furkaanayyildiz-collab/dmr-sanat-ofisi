@@ -1,3 +1,5 @@
+import exteriorDay from "./exterior-day.jpg";
+import exteriorNight from "./exterior-night.jpg";
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -60,8 +62,8 @@ const dayNightScene = {
   title: "Dış Cephe Atmosferi",
   location: "İstanbul, Türkiye",
   service: "Gündüzden Geceye Dış Cephe Sunumu",
-  dayImage: "https://raw.githubusercontent.com/furkaanyiyildiz-collab/dmr-sanat-ofisi/main/dmr-sanat-ofisi-vite/public/images/dmr/exterior-day.jpg",
-  nightImage: "https://raw.githubusercontent.com/furkaanyiyildiz-collab/dmr-sanat-ofisi/main/dmr-sanat-ofisi-vite/public/images/dmr/exterior-night.jpg",
+  dayImage: exteriorDay,
+nightImage: exteriorNight,
 };
 
 const processSteps = [

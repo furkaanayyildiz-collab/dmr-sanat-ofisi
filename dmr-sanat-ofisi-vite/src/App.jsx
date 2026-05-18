@@ -201,20 +201,20 @@ function DayNightReveal() {
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={ref} className="relative h-[260vh] bg-[#050403]">
+    <section ref={ref} className="relative isolate h-[260vh] bg-[#050403]">
       <div className="sticky top-0 h-screen overflow-hidden">
         <motion.img
           src="/images/dmr/exterior-day.jpg"
           alt="DMR gündüz dış cephe render"
           style={{ opacity: dayOpacity }}
-          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
         />
 
         <motion.img
           src="/images/dmr/exterior-night.jpg"
           alt="DMR gece dış cephe render"
           style={{ opacity: nightOpacity }}
-          className="absolute inset-0 z-10 h-full w-full object-cover object-center"
+          className="absolute inset-0 z-[2] h-full w-full object-cover object-center"
         />
 
         <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/62 via-black/10 to-black/45" />

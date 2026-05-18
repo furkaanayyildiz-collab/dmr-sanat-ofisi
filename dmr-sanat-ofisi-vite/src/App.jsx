@@ -1,18 +1,5 @@
 import exteriorDay from "./exterior-day.jpg";
 import exteriorNight from "./exterior-night.jpg";
-import introRender01 from "./intro-render-01.jpg";
-import introRender02 from "./intro-render-02.jpg";
-import introRender03 from "./intro-render-03.jpg";
-import introRender04 from "./intro-render-04.jpg";
-import introRender05 from "./intro-render-05.jpg";
-import introRender06 from "./intro-render-06.jpg";
-import introRender07 from "./intro-render-07.jpg";
-import introRender08 from "./intro-render-08.jpg";
-import introRender09 from "./intro-render-09.jpg";
-import introRender10 from "./intro-render-10.jpg";
-import introRender11 from "./intro-render-11.jpg";
-import introRender12 from "./intro-render-12.jpg";
-import introRender13 from "./intro-render-13.jpg";
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -204,37 +191,7 @@ const services = [
   "Render Animasyonu",
   "Uygulama & Konsept Sunumu",
 ];
-const introImages = [
-  introRender01,
-  introRender02,
-  introRender03,
-  introRender04,
-  introRender05,
-  introRender06,
-  introRender07,
-  introRender08,
-  introRender09,
-  introRender10,
-  introRender11,
-  introRender12,
-  introRender13,
-];
 
-const introCards = [
-  { x: "7%", y: "16%", w: "150px", delay: 0.25, rotate: -8 },
-  { x: "74%", y: "12%", w: "180px", delay: 0.35, rotate: 7 },
-  { x: "12%", y: "64%", w: "170px", delay: 0.45, rotate: 5 },
-  { x: "78%", y: "66%", w: "160px", delay: 0.55, rotate: -6 },
-  { x: "30%", y: "10%", w: "130px", delay: 0.65, rotate: 4 },
-  { x: "58%", y: "72%", w: "145px", delay: 0.75, rotate: -4 },
-  { x: "4%", y: "40%", w: "120px", delay: 0.85, rotate: 9 },
-  { x: "86%", y: "38%", w: "130px", delay: 0.95, rotate: -9 },
-  { x: "24%", y: "76%", w: "125px", delay: 1.05, rotate: 6 },
-  { x: "66%", y: "8%", w: "120px", delay: 1.15, rotate: -5 },
-  { x: "40%", y: "70%", w: "110px", delay: 1.25, rotate: 3 },
-  { x: "18%", y: "28%", w: "105px", delay: 1.35, rotate: -7 },
-  { x: "72%", y: "48%", w: "115px", delay: 1.45, rotate: 8 },
-];
 function DayNightReveal() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({

@@ -238,7 +238,23 @@ function DayNightReveal() {
             </p>
           </div>
 
-          <div className="max-w-5xl">
+          <div className="max-w-6xl">
+  <div className="mb-10 grid max-w-3xl grid-cols-3 gap-3 md:gap-6">
+    {[
+      ["10.000+", "Render"],
+      ["1.000+", "Proje"],
+      ["4K", "Sunum Kalitesi"],
+    ].map(([value, label]) => (
+      <div key={label} className="rounded-2xl border border-white/10 bg-black/25 px-4 py-4 backdrop-blur-xl md:px-6 md:py-5">
+        <p className="text-2xl font-medium tracking-[-0.04em] text-[#F1D091] md:text-4xl">
+          {value}
+        </p>
+        <p className="mt-2 text-[9px] uppercase tracking-[0.28em] text-white/45">
+          {label}
+        </p>
+      </div>
+    ))}
+  </div>
             <p className="mb-6 text-[10px] uppercase tracking-[0.5em] text-white/45">
               Cinematic Exterior
             </p>
@@ -502,7 +518,7 @@ export default function DMRSanatOfisi() {
         </div>
       )}
 
-     <DayNightReveal />
+     
 
       <section id="philosophy" className="relative mx-auto max-w-7xl px-5 py-28 md:px-10 md:py-44">
         <div className="grid gap-16 md:grid-cols-[0.62fr_1.38fr] md:items-end">

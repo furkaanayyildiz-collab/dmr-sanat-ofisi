@@ -1,5 +1,18 @@
 import exteriorDay from "./exterior-day.jpg";
 import exteriorNight from "./exterior-night.jpg";
+import introRender01 from "./src/intro-render-01.jpg";
+import introRender02 from "./src/intro-render-02.jpg";
+import introRender03 from "./src/intro-render-03.jpg";
+import introRender04 from "./src/intro-render-04.jpg";
+import introRender05 from "./src/intro-render-05.jpg";
+import introRender06 from "./src/intro-render-06.jpg";
+import introRender07 from "./src/intro-render-07.jpg";
+import introRender08 from "./src/intro-render-08.jpg";
+import introRender09 from "./src/intro-render-09.jpg";
+import introRender10 from "./src/intro-render-10.jpg";
+import introRender11 from "./src/intro-render-11.jpg";
+import introRender12 from "./src/intro-render-12.jpg";
+import introRender13 from "./src/intro-render-13.jpg";
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -191,6 +204,37 @@ const services = [
   "Render Animasyonu",
   "Uygulama & Konsept Sunumu",
 ];
+const introImages = [
+  introRender01,
+  introRender02,
+  introRender03,
+  introRender04,
+  introRender05,
+  introRender06,
+  introRender07,
+  introRender08,
+  introRender09,
+  introRender10,
+  introRender11,
+  introRender12,
+  introRender13,
+];
+
+const introCards = [
+  { x: "7%", y: "16%", w: "150px", delay: 0.25, rotate: -8 },
+  { x: "74%", y: "12%", w: "180px", delay: 0.35, rotate: 7 },
+  { x: "12%", y: "64%", w: "170px", delay: 0.45, rotate: 5 },
+  { x: "78%", y: "66%", w: "160px", delay: 0.55, rotate: -6 },
+  { x: "30%", y: "10%", w: "130px", delay: 0.65, rotate: 4 },
+  { x: "58%", y: "72%", w: "145px", delay: 0.75, rotate: -4 },
+  { x: "4%", y: "40%", w: "120px", delay: 0.85, rotate: 9 },
+  { x: "86%", y: "38%", w: "130px", delay: 0.95, rotate: -9 },
+  { x: "24%", y: "76%", w: "125px", delay: 1.05, rotate: 6 },
+  { x: "66%", y: "8%", w: "120px", delay: 1.15, rotate: -5 },
+  { x: "40%", y: "70%", w: "110px", delay: 1.25, rotate: 3 },
+  { x: "18%", y: "28%", w: "105px", delay: 1.35, rotate: -7 },
+  { x: "72%", y: "48%", w: "115px", delay: 1.45, rotate: 8 },
+];
 function DayNightReveal() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -266,7 +310,7 @@ export default function DMRSanatOfisi() {
   const [showStudioPage, setShowStudioPage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 1650);
+    const timer = setTimeout(() => setShowIntro(false), 4300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -298,18 +342,67 @@ export default function DMRSanatOfisi() {
           <span className="text-[11px] font-medium uppercase tracking-[0.22em]">Teklif Al</span>
         </div>
       </a>
+{showIntro && (
+  <motion.div
+    className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#020202]"
+    initial={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(216,177,111,.12),transparent_34%)]" />
 
-      {showIntro && (
-        <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020202]">
-          <motion.div initial={{ opacity: 0, y: 18, scale: 0.94 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="relative text-center">
-            <div className="absolute -inset-20 rounded-full bg-[#D8B16F]/10 blur-[90px]" />
-            <DMRLogo className="relative mx-auto w-40 text-[#F7F1E8] drop-shadow-[0_0_50px_rgba(216,177,111,0.18)] md:w-64" />
-            <div className="relative mx-auto mt-7 h-px w-36 bg-gradient-to-r from-transparent via-[#D8B16F]/80 to-transparent" />
-            <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">Sanat Ofisi</p>
-          </motion.div>
-        </motion.div>
-      )}
+    {introCards.map((card, index) => (
+      <motion.div
+        key={index}
+        initial={{
+          opacity: 0,
+          scale: 0.35,
+          rotate: card.rotate * 2,
+          filter: "blur(18px)",
+        }}
+        animate={{
+          opacity: [0, 0.65, 0.42],
+          scale: [0.35, 1.08, 1],
+          rotate: card.rotate,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 1.25,
+          delay: card.delay,
+          ease: "easeOut",
+        }}
+        className="absolute hidden overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_28px_90px_rgba(0,0,0,.55)] md:block"
+        style={{
+          left: card.x,
+          top: card.y,
+          width: card.w,
+          aspectRatio: "4 / 5",
+        }}
+      >
+        <img
+          src={introImages[index]}
+          alt="DMR intro render"
+          className="h-full w-full object-cover opacity-80 saturate-[0.8] contrast-[1.08]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-white/5" />
+      </motion.div>
+    ))}
 
+    <motion.div
+      initial={{ opacity: 0, y: 18, scale: 0.94 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 1, ease: "easeOut", delay: 0.65 }}
+      className="relative z-10 text-center"
+    >
+      <div className="absolute -inset-24 rounded-full bg-[#020202]/80 blur-[70px]" />
+      <div className="absolute -inset-20 rounded-full bg-[#D8B16F]/10 blur-[90px]" />
+      <DMRLogo className="relative mx-auto w-40 text-[#F7F1E8] drop-shadow-[0_0_50px_rgba(216,177,111,0.18)] md:w-64" />
+      <div className="relative mx-auto mt-7 h-px w-36 bg-gradient-to-r from-transparent via-[#D8B16F]/80 to-transparent" />
+      <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">
+        Sanat Ofisi
+      </p>
+    </motion.div>
+  </motion.div>
+)}
       <header className="fixed left-4 right-4 top-4 z-40 md:left-8 md:right-8">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/25 px-5 shadow-[0_24px_90px_rgba(0,0,0,0.5)] backdrop-blur-2xl md:h-[72px] md:px-8">
           <button

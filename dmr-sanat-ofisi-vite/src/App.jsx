@@ -281,6 +281,7 @@ export default function DMRSanatOfisi() {
   const [activeImage, setActiveImage] = useState(0);
   const [showGalleryPage, setShowGalleryPage] = useState(false);
   const [showStudioPage, setShowStudioPage] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowIntro(false), 2200);
@@ -359,10 +360,58 @@ export default function DMRSanatOfisi() {
             <button onClick={() => { setShowStudioPage(true); setShowGalleryPage(false); }} className="transition hover:text-[#D8B16F]">Sanat Ofisi</button>
             <a href="mailto:dmrteklif@gmail.com?subject=DMR%20Sanat%20Ofisi%20-%20Proje%20Talebi" className="rounded-full border border-[#D8B16F]/60 px-5 py-3 text-[#D8B16F] transition hover:bg-[#D8B16F] hover:text-black">İletişim</a>
           </div>
-          <button className="md:hidden rounded-full border border-white/15 px-4 py-2 text-[10px] uppercase tracking-[0.2em]">Menü</button>
+          <button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  className="md:hidden rounded-full border border-white/15 px-4 py-2 text-[10px] uppercase tracking-[0.2em]"
+>
+  {mobileMenuOpen ? "Kapat" : "Menü"}
+</button>
         </nav>
       </header>
+{mobileMenuOpen && (
+  <div className="fixed inset-x-4 top-24 z-[45] overflow-hidden rounded-[2rem] border border-white/10 bg-black/85 shadow-[0_28px_100px_rgba(0,0,0,0.45)] backdrop-blur-2xl md:hidden">
+    <div className="flex flex-col p-4">
+      <button
+        onClick={() => {
+          setShowGalleryPage(true);
+          setShowStudioPage(false);
+          setMobileMenuOpen(false);
+        }}
+        className="rounded-2xl px-5 py-4 text-left text-[11px] uppercase tracking-[0.26em] text-white/75 transition hover:bg-white/5 hover:text-[#D8B16F]"
+      >
+        Projeler
+      </button>
 
+      <button
+        onClick={() => {
+          document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+          setMobileMenuOpen(false);
+        }}
+        className="rounded-2xl px-5 py-4 text-left text-[11px] uppercase tracking-[0.26em] text-white/75 transition hover:bg-white/5 hover:text-[#D8B16F]"
+      >
+        Hizmetler
+      </button>
+
+      <button
+        onClick={() => {
+          setShowStudioPage(true);
+          setShowGalleryPage(false);
+          setMobileMenuOpen(false);
+        }}
+        className="rounded-2xl px-5 py-4 text-left text-[11px] uppercase tracking-[0.26em] text-white/75 transition hover:bg-white/5 hover:text-[#D8B16F]"
+      >
+        Sanat Ofisi
+      </button>
+
+      <a
+        href="mailto:hello@voxeldmr.com?subject=DMR%20Sanat%20Ofisi%20-%20Proje%20Talebi"
+        className="mt-2 rounded-full bg-[#D8B16F] px-5 py-4 text-center text-[11px] uppercase tracking-[0.26em] text-black"
+      >
+        İletişim
+      </a>
+    </div>
+  </div>
+)}
       {showStudioPage && (
         <div className="fixed inset-0 z-[55] overflow-y-auto bg-[#050403]/98 backdrop-blur-2xl">
           <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(216,177,111,.18),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(255,255,255,.08),transparent_26%),linear-gradient(180deg,#050403_0%,#0B0907_55%,#050403_100%)]" />

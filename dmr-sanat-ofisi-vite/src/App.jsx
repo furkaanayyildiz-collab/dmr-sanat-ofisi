@@ -519,7 +519,8 @@ export default function DMRSanatOfisi() {
       )}
 
      
-
+<DayNightReveal />
+      
       <section id="philosophy" className="relative mx-auto max-w-7xl px-5 py-28 md:px-10 md:py-44">
         <div className="grid gap-16 md:grid-cols-[0.62fr_1.38fr] md:items-end">
           <div><p className="mb-8 text-[10px] uppercase tracking-[0.55em] text-[#D8B16F]">Manifesto</p><div className="h-36 w-px bg-gradient-to-b from-[#D8B16F]/75 to-transparent" /></div>
@@ -563,7 +564,7 @@ export default function DMRSanatOfisi() {
         <div className="fixed inset-0 z-[60] bg-[#050403]/96 backdrop-blur-2xl"><button onClick={() => setActiveGallery(null)} className="absolute right-5 top-5 z-20 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-[10px] uppercase tracking-[0.28em] text-white/70 transition hover:border-[#D8B16F]/60 hover:text-[#D8B16F] md:right-10 md:top-10">Kapat</button><div className="mx-auto flex h-full max-w-7xl flex-col px-5 py-20 md:px-10 md:py-12"><div className="mb-6 flex items-end justify-between gap-6 border-b border-white/10 pb-6"><div><p className="mb-3 text-[10px] uppercase tracking-[0.5em] text-[#D8B16F]">Proje Galerisi</p><h3 className="text-4xl font-medium tracking-[-0.04em] md:text-6xl">{activeGallery.title}</h3></div><p className="hidden text-sm text-white/45 md:block">{activeImage + 1} / {activeGallery.gallery.length}</p></div><div className="relative min-h-0 flex-1 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_35px_140px_rgba(0,0,0,0.55)]"><img src={activeGallery.gallery[activeImage]} alt={`${activeGallery.title} render ${activeImage + 1}`} className="h-full w-full object-cover" /><button onClick={() => setActiveImage((activeImage - 1 + activeGallery.gallery.length) % activeGallery.gallery.length)} className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-xl transition hover:border-[#D8B16F] hover:text-[#D8B16F]">←</button><button onClick={() => setActiveImage((activeImage + 1) % activeGallery.gallery.length)} className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-xl transition hover:border-[#D8B16F] hover:text-[#D8B16F]">→</button></div><div className="mt-6 flex gap-3 overflow-x-auto pb-1">{activeGallery.gallery.map((image, i) => (<button key={image} onClick={() => setActiveImage(i)} className={`h-20 w-32 shrink-0 overflow-hidden rounded-2xl border transition ${activeImage === i ? "border-[#D8B16F]" : "border-white/10 opacity-55 hover:opacity-100"}`}><img src={image} alt="Galeri küçük görsel" className="h-full w-full object-cover" /></button>))}</div></div></div>
       )}
 
-      <DayNightReveal />
+      
 
       <section id="services" className="relative mx-auto max-w-7xl px-5 py-28 md:px-10 md:py-44">
         <div className="pointer-events-none absolute left-0 top-8 hidden text-[220px] font-medium tracking-[-0.08em] text-white/[0.025] md:block">DMR</div>

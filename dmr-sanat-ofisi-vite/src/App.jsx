@@ -60,8 +60,8 @@ const dayNightScene = {
   title: "Dış Cephe Atmosferi",
   location: "İstanbul, Türkiye",
   service: "Gündüzden Geceye Dış Cephe Sunumu",
-  dayImage: "/images/dmr/exterior-day.jpg",
-  nightImage: "/images/dmr/exterior-night.jpg",
+  dayImage: "https://raw.githubusercontent.com/furkaanyiyildiz-collab/dmr-sanat-ofisi/main/dmr-sanat-ofisi-vite/public/images/dmr/exterior-day.jpg",
+  nightImage: "https://raw.githubusercontent.com/furkaanyiyildiz-collab/dmr-sanat-ofisi/main/dmr-sanat-ofisi-vite/public/images/dmr/exterior-night.jpg",
 };
 
 const processSteps = [
@@ -204,14 +204,14 @@ function DayNightReveal() {
     <section ref={ref} className="relative isolate h-[260vh] bg-[#050403]">
       <div className="sticky top-0 h-screen overflow-hidden">
         <motion.img
-          src="/images/dmr/exterior-day.jpg"
+         src={dayNightScene.dayImage}
           alt="DMR gündüz dış cephe render"
           style={{ opacity: dayOpacity }}
           className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
         />
 
         <motion.img
-          src="/images/dmr/exterior-night.jpg"
+          src={dayNightScene.nightImage}
           alt="DMR gece dış cephe render"
           style={{ opacity: nightOpacity }}
           className="absolute inset-0 z-[2] h-full w-full object-cover object-center"

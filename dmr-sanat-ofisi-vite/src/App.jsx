@@ -309,24 +309,7 @@ export default function DMRSanatOfisi() {
     </motion.div>
   </motion.div>
 )}
-      <header className="fixed left-4 right-4 top-4 z-40 md:left-8 md:right-8">
-
-    <motion.div
-      initial={{ opacity: 0, y: 18, scale: 0.94 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 1, ease: "easeOut", delay: 0.65 }}
-      className="relative z-10 text-center"
-    >
-      <div className="absolute -inset-24 rounded-full bg-[#020202]/80 blur-[70px]" />
-      <div className="absolute -inset-20 rounded-full bg-[#D8B16F]/10 blur-[90px]" />
-      <DMRLogo className="relative mx-auto w-40 text-[#F7F1E8] drop-shadow-[0_0_50px_rgba(216,177,111,0.18)] md:w-64" />
-      <div className="relative mx-auto mt-7 h-px w-36 bg-gradient-to-r from-transparent via-[#D8B16F]/80 to-transparent" />
-      <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">
-        Sanat Ofisi
-      </p>
-    </motion.div>
-  </motion.div>
-)}
+    
       <header className="fixed left-4 right-4 top-4 z-40 md:left-8 md:right-8">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/25 px-5 shadow-[0_24px_90px_rgba(0,0,0,0.5)] backdrop-blur-2xl md:h-[72px] md:px-8">
           <button

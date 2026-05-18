@@ -503,24 +503,12 @@ export default function DMRSanatOfisi() {
       )}
 
       <section id="hero" className="relative min-h-screen overflow-hidden">
-        <motion.div initial={{ scale: 1.13, opacity: 0, filter: "blur(10px)" }} animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1.8, ease: "easeOut", delay: 1.15 }} className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2600&auto=format&fit=crop" alt="DMR Sanat Ofisi cinematic hero" className="h-full w-full object-cover opacity-78 saturate-[0.82] contrast-[1.16]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/86 via-black/28 to-black/72" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-black/65" />
-        </motion.div>
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-12 pt-28 md:px-10 md:pb-20">
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.42, duration: 0.8 }} className="mb-8 grid max-w-3xl grid-cols-3 gap-3 border-y border-white/12 py-4 text-[#F4EFE6]/72 md:max-w-2xl">
-            <div><p className="text-2xl font-medium tracking-[-0.04em] text-[#D8B16F] md:text-3xl">1000+</p><p className="mt-1 text-[9px] uppercase tracking-[0.28em] text-white/45">Render</p></div>
-            <div><p className="text-2xl font-medium tracking-[-0.04em] text-[#D8B16F] md:text-3xl">50+</p><p className="mt-1 text-[9px] uppercase tracking-[0.28em] text-white/45">Proje</p></div>
-            <div><p className="text-2xl font-medium tracking-[-0.04em] text-[#D8B16F] md:text-3xl">4K</p><p className="mt-1 text-[9px] uppercase tracking-[0.28em] text-white/45">Sunum Kalitesi</p></div>
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 46 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.58, duration: 0.95 }} className="max-w-6xl font-medium text-[14vw] leading-[0.88] tracking-[-0.075em] text-[#F8F1E6] drop-shadow-[0_32px_95px_rgba(0,0,0,0.72)] md:text-[96px] lg:text-[126px]">
-            Sıradanı <span className="text-[#D8B16F]">unutun.</span><br />Biz mükemmeli<br className="hidden md:block" /> sunuyoruz.
-          </motion.h1>
-          <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.82, duration: 0.9 }} className="mt-9 grid gap-8 md:grid-cols-[1fr_0.9fr] md:items-end">
-            <p className="max-w-2xl text-base leading-8 text-white/64 md:text-lg">DMR Sanat Ofisi; seçkin mimari projeler için dış cephe, iç mekân ve render animasyonlarını sinematik bir sunum deneyimine dönüştürür.</p>
-            <div className="flex items-center gap-5 md:justify-end"><button onClick={() => setShowGalleryPage(true)} className="group rounded-full bg-[#D8B16F] px-7 py-4 text-xs uppercase tracking-[0.24em] text-black shadow-[0_24px_90px_rgba(216,177,111,.24)] transition hover:scale-[1.035] hover:bg-[#F1D091]">Keşfet <span className="inline-block transition group-hover:translate-x-1">→</span></button><span className="hidden h-px w-20 bg-[#D8B16F]/50 md:block" /><span className="hidden text-[10px] uppercase tracking-[0.32em] text-white/45 md:block">Aşağı Kaydır</span></div>
-          </motion.div>
+        <div className="absolute inset-0">
+  <DayNightReveal />
+</div>
+
+<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-black/60 z-[2]" />
+<div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-black/35 z-[2]" />
         </div>
       </section>
 
@@ -558,7 +546,7 @@ export default function DMRSanatOfisi() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/18 to-black/58" /><div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-black/35" />
             <button onClick={() => { setActiveGallery(scene); setActiveImage(0); }} className="absolute right-5 top-28 z-20 flex h-14 w-14 items-center justify-center rounded-full border border-[#D8B16F]/45 bg-black/35 text-[#D8B16F] shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl transition hover:scale-105 hover:bg-[#D8B16F] hover:text-black md:right-10 md:top-32" aria-label={`${scene.title} galerisini aç`}><svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="4" y="5" width="13" height="13" rx="1.5" /><path d="M8 3h10.5A1.5 1.5 0 0 1 20 4.5V15" /><path d="m7 15 3.2-3.2a1 1 0 0 1 1.4 0L14 14.2l1.2-1.2a1 1 0 0 1 1.4 0L20 16.4" /></svg></button>
             <div className="absolute right-24 top-[132px] z-20 hidden text-[10px] uppercase tracking-[0.32em] text-white/45 md:block">Galeri</div>
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-14 md:px-10 md:pb-20"><div className="grid gap-10 md:grid-cols-[0.45fr_1.55fr] md:items-end"><div><p className="mb-6 text-[10px] uppercase tracking-[0.55em] text-[#D8B16F]">Sahne {scene.number}</p><div className="h-24 w-px bg-gradient-to-b from-[#D8B16F] to-transparent" /></div><div><h3 className="font-medium text-6xl leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-[104px]">{scene.title}</h3><div className="mt-8 grid gap-4 border-t border-white/15 pt-6 text-sm text-white/66 md:grid-cols-3"><span>{scene.location}</span><span>{scene.service}</span><span>2025</span></div></div></div></div>
+           <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-14 md:px-10 md:pb-20"><div className="grid gap-10 md:grid-cols-[0.45fr_1.55fr] md:items-end"><div><p className="mb-6 text-[10px] uppercase tracking-[0.55em] text-[#D8B16F]">Sahne {scene.number}</p><div className="h-24 w-px bg-gradient-to-b from-[#D8B16F] to-transparent" /></div><div><h3 className="font-medium text-6xl leading-[0.92] tracking-[-0.045em] md:text-7xl lg:text-[104px]">{scene.title}</h3><div className="mt-8 grid gap-4 border-t border-white/15 pt-6 text-sm text-white/66 md:grid-cols-3"><span>{scene.location}</span><span>{scene.service}</span><span>2025</span></div></div></div></div>
           </motion.article>
         ))}
       </section>

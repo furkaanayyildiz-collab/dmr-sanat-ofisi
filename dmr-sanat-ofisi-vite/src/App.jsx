@@ -189,35 +189,67 @@ const services = [
   "Render Animasyonu",
   "Uygulama & Konsept Sunumu",
 ];
-
 function DayNightReveal() {
   const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
- const nightOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-const dayOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const sceneScale = useTransform(scrollYProgress, [0, 1], [1.02, 1.09]);
-  const nightScale = useTransform(scrollYProgress, [0, 1], [1.015, 1.085]);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const nightOpacity = useTransform(scrollYProgress, [0, 0.45, 1], [0, 0.55, 1]);
+  const dayOpacity = useTransform(scrollYProgress, [0, 0.55, 1], [1, 0.45, 0]);
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -42]);
 
   return (
-    <section ref={ref} className="relative h-[250vh] border-y border-[#D8B16F]/20 bg-[#050403]">
+    <section ref={ref} className="relative h-[260vh] bg-[#050403]">
       <div className="sticky top-0 h-screen overflow-hidden">
-        <motion.img src={dayNightScene.dayImage} alt="DMR gündüz dış cephe render" style={{ scale: sceneScale, opacity: dayOpacity }} className="absolute inset-0 h-full w-full object-cover object-center" />
-        <motion.img src={dayNightScene.nightImage} alt="DMR gece dış cephe render" style={{ opacity: nightOpacity, scale: nightScale }} className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/58 via-black/6 to-black/38" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050403]/88 via-transparent to-black/18" />
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between px-5 py-28 md:px-10">
+        <motion.img
+          src="/images/dmr/exterior-day.jpg"
+          alt="DMR gündüz dış cephe render"
+          style={{ opacity: dayOpacity }}
+          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+        />
+
+        <motion.img
+          src="/images/dmr/exterior-night.jpg"
+          alt="DMR gece dış cephe render"
+          style={{ opacity: nightOpacity }}
+          className="absolute inset-0 z-10 h-full w-full object-cover object-center"
+        />
+
+        <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/62 via-black/10 to-black/45" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#050403]/88 via-transparent to-black/20" />
+
+        <div className="relative z-30 mx-auto flex h-full max-w-7xl flex-col justify-between px-5 py-28 md:px-10">
           <div className="flex items-center justify-between gap-8">
-            <p className="text-[10px] uppercase tracking-[0.55em] text-[#D8B16F]">Gündüzden Geceye</p>
-            <div className="h-px flex-1 overflow-hidden bg-white/12"><motion.div style={{ width: progressWidth }} className="h-px bg-[#D8B16F]" /></div>
-            <p className="hidden text-[10px] uppercase tracking-[0.4em] text-white/45 md:block">Scroll</p>
+            <p className="text-[10px] uppercase tracking-[0.55em] text-[#D8B16F]">
+              Gündüzden Geceye
+            </p>
+
+            <div className="h-px flex-1 overflow-hidden bg-white/12">
+              <motion.div style={{ width: progressWidth }} className="h-px bg-[#D8B16F]" />
+            </div>
+
+            <p className="hidden text-[10px] uppercase tracking-[0.4em] text-white/45 md:block">
+              Scroll
+            </p>
           </div>
-          <motion.div style={{ y: contentY }} className="max-w-5xl">
-            <p className="mb-6 text-[10px] uppercase tracking-[0.5em] text-white/45">Cinematic Exterior</p>
-            <h2 className="font-medium text-6xl leading-[0.88] tracking-[-0.045em] text-[#F8F1E6] drop-shadow-[0_30px_90px_rgba(0,0,0,.72)] md:text-7xl lg:text-[104px]">Tek cephe. <br /> İki ayrı atmosfer.</h2>
-            <div className="mt-8 grid max-w-3xl gap-4 border-t border-white/15 pt-6 text-sm text-white/65 md:grid-cols-3"><span>{dayNightScene.location}</span><span>{dayNightScene.service}</span><span>2025</span></div>
-          </motion.div>
+
+          <div className="max-w-5xl">
+            <p className="mb-6 text-[10px] uppercase tracking-[0.5em] text-white/45">
+              Cinematic Exterior
+            </p>
+
+            <h2 className="font-medium text-6xl leading-[0.88] tracking-[-0.045em] text-[#F8F1E6] drop-shadow-[0_30px_90px_rgba(0,0,0,.72)] md:text-7xl lg:text-[104px]">
+              Tek cephe. <br /> İki ayrı atmosfer.
+            </h2>
+
+            <div className="mt-8 grid max-w-3xl gap-4 border-t border-white/15 pt-6 text-sm text-white/65 md:grid-cols-3">
+              <span>İstanbul, Türkiye</span>
+              <span>Gündüzden Geceye Dış Cephe Sunumu</span>
+              <span>2025</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

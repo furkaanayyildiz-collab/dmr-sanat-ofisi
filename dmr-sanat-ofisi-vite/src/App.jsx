@@ -301,21 +301,15 @@ export default function DMRSanatOfisi() {
       </a>
 {showIntro && (
   <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020202]">
-    <motion.div
-      initial={{ opacity: 0, y: 18, scale: 0.94 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      className="relative text-center"
-    >
+    <motion.div initial={{ opacity: 0, y: 18, scale: 0.94 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="relative text-center">
       <div className="absolute -inset-20 rounded-full bg-[#D8B16F]/10 blur-[90px]" />
       <DMRLogo className="relative mx-auto w-40 text-[#F7F1E8] drop-shadow-[0_0_50px_rgba(216,177,111,0.18)] md:w-64" />
       <div className="relative mx-auto mt-7 h-px w-36 bg-gradient-to-r from-transparent via-[#D8B16F]/80 to-transparent" />
-      <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">
-        Sanat Ofisi
-      </p>
+      <p className="relative mt-6 text-[10px] uppercase tracking-[0.62em] text-[#D8B16F]/80">Sanat Ofisi</p>
     </motion.div>
   </motion.div>
 )}
+      <header className="fixed left-4 right-4 top-4 z-40 md:left-8 md:right-8">
 
     <motion.div
       initial={{ opacity: 0, y: 18, scale: 0.94 }}
